@@ -9,6 +9,7 @@ public class Problem2 {
         double length = 0;
         double width = 0;
         double height = 0;
+        
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter the length of the Triangle: ");
         length = input.nextDouble();
@@ -16,8 +17,12 @@ public class Problem2 {
         width = input.nextDouble();
         System.out.print("Please enter the height of the Triangle: ");
         height = input.nextDouble();
+        double s1 = length;
+        double s2 = width;
+        double s3= height;
         if (isTriangle(length, width, height) == true) {
             System.out.println("That is a Valid Triangle");
+            System.out.println("The area of the Triangle is: " + area(s1,s2,s3));
         } else {
             System.out.println("That is not a Valid Triangle");
         }
@@ -29,5 +34,15 @@ public class Problem2 {
         } else {
             return false;
         }
+    }
+    public static double area(double s1, double s2, double s3){
+        double s = 0;
+        double area = 0;
+        
+        s = ((s1 + s2 + s3)/2);
+        area = (2 * Math.sqrt(s*(s-s1)*(s-s2)*(s-s3)));
+        return area;
+
+        
     }
 }
